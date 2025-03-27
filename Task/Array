@@ -1,0 +1,53 @@
+1. ****Find Second Largest Number in an Array in java without any function***
+package Array;
+
+public class SecondHighestNum {
+
+    public static void main(String[] args) {
+        int[] arr = {12, 35, 1, 10, 34, 1}; 
+        int n = arr.length;
+
+            if (n < 2) {
+            System.out.println("Array should have at least two elements.");
+            return;
+        }
+
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+
+            for (int i = 0; i < n; i++) {
+            if (arr[i] > largest) {
+                secondLargest = largest;
+                largest = arr[i];
+            } else if (arr[i] > secondLargest && arr[i] != largest) {
+                secondLargest = arr[i];
+            }
+        }
+        
+        System.out.println("Second largest number is: " + secondLargest);
+    }
+}
+
+
+2 ****Odd and Even Numbers from an Array****
+package Array;
+
+public class OddAndEvenNum {
+    public static void main(String[] args) {
+        int[] arr = {12, 35, 1, 10, 34, 1, 57, 44}; // Example array
+        
+        System.out.println("Even numbers:");
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                System.out.print(arr[i] + " ");
+            }
+        }
+
+        System.out.println("\nOdd numbers:");
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 != 0) {
+                System.out.print(arr[i] + " ");
+            }
+        }
+    }
+}
